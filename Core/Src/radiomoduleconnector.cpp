@@ -104,7 +104,7 @@ void RadioModuleConnector::setLED(bool red, bool green, bool blue)
 
 void RadioModuleConnector::resetModule()
 {
-  printf("reset radio module\n");
+  //printf("reset radio module\n");
   HAL_GPIO_WritePin(EFM32_RESET_PORT, EFM32_RESET_PIN,GPIO_PIN_RESET);
   vTaskDelay(50 / portTICK_PERIOD_MS);
   HAL_GPIO_WritePin(EFM32_RESET_PORT, EFM32_RESET_PIN,GPIO_PIN_SET);
