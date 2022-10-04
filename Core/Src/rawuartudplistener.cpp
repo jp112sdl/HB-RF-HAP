@@ -38,9 +38,8 @@ const osThreadAttr_t udpQueueHandlerTask_attributes = {
   .stack_size = 2432,
   .priority = (osPriority_t) osPriorityAboveNormal
 };
- osThreadId_t _udpQueueHandlerTaskHandle = NULL;
-
- QueueHandle_t _udp_queue;
+osThreadId_t _udpQueueHandlerTaskHandle = NULL;
+QueueHandle_t _udp_queue;
 
 void _raw_uart_udpQueueHandlerTask(void *parameter)
 {
