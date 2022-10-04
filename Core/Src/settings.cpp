@@ -38,6 +38,7 @@ void Settings::load()
 {
 
   if (EEPROM.read(0) != 0x9e) {
+	  printf("FIRST EEPROM INIT!\n");
 	  clear();
 	  return;
   }
