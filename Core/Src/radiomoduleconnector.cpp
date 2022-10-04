@@ -120,35 +120,34 @@ void RadioModuleConnector::_serialQueueHandler()
 {
     for (;;)
     {
-    	uint8_t rcvbyte[1] = {0};
-    	uint8_t UART_RcvBuffer[255]={0};
+    	uint8_t rcvbyte[255] = {0};
+    	uint16_t rxlen;
+    	unsigned char UART_RcvBuffer[255]={0};
     	uint16_t len = 1;
+    	taskENTER_CRITICAL();
     	while (__HAL_UART_GET_FLAG(&huart5, UART_FLAG_RXNE) == SET) {
-    	    HAL_UART_Receive(&huart5, (uint8_t *)rcvbyte, 1, 10);
+    	    HAL_UART_Receive(&huart5, (uint8_t *)rcvbyte, 1, 0);
     	    if (rcvbyte[0] == 0xFD) {
-    		  UART_RcvBuffer[0] = 0xFD;
-    		  HAL_UART_Receive(&huart5, (uint8_t *)rcvbyte, 1, 10);
-    		  uint8_t len1=rcvbyte[0] * 255;
-    		  UART_RcvBuffer[1] = rcvbyte[0]; //00
-    		  HAL_UART_Receive(&huart5, (uint8_t *)rcvbyte, 1, 10);
-    		  len += (len1 << 8) + rcvbyte[0];
-    		  UART_RcvBuffer[2] = rcvbyte[0]; // 0f
-    		  HAL_UART_Receive(&huart5, (uint8_t *)rcvbyte, 1, 10);
-    		  UART_RcvBuffer[3] = rcvbyte[0]; // fe
+    	    	HAL_UARTEx_ReceiveToIdle(&huart5, (uint8_t *)rcvbyte, 255, &rxlen, 5);
+	    		UART_RcvBuffer[0] = 0xFD;
 
-    		  for (uint16_t i = 0; i < len; i++) {
-    			  HAL_UART_Receive(&huart5, (uint8_t *)rcvbyte, 1, 10);
-    			  UART_RcvBuffer[4+i] = rcvbyte[0];
-    		  }
-      	     _streamParser->append(UART_RcvBuffer, len+4);
-
-    		  memset(UART_RcvBuffer, 0, 255);
-    		  memset(rcvbyte, 0, 1);
-    	    } else {
-    	      _streamParser->flush();
+    	    	for (uint16_t i = 0; i < rxlen; i++) {
+    	    		UART_RcvBuffer[len] = rcvbyte[i];
+    	    		if (rcvbyte[i] == 0xFD) {
+    	    			_streamParser->append(UART_RcvBuffer, len);
+    	    			len = 1;
+    	         		//memset(UART_RcvBuffer, 0, 255);
+      	    			UART_RcvBuffer[0] = 0xFD;
+    	    		}
+    	    		len++;
+    	    	}
+    	    	_streamParser->append(UART_RcvBuffer, len);
+        		//memset(UART_RcvBuffer, 0, 255);
+         		//memset(rcvbyte, 0, 255);
     	    }
-
     	}
+
+  		taskEXIT_CRITICAL();
   		_streamParser->flush();
     }
     vTaskDelete(NULL);
