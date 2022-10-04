@@ -1,0 +1,220 @@
+2022-10-03 18:31:14,085 de.eq3.cbcs.server.local.base.LocalServerBase DEBUG [main] State changed from NONE to CONFIGURED 
+2022-10-03 18:31:14,087 de.eq3.ccu.server.BaseHMServer DEBUG [main] Cloud Ready RFD config file: /var/etc/crRFD.conf 
+2022-10-03 18:31:14,088 de.eq3.lib.util.dynamics.GenericFactory INFO  [main] @GenericFactory 
+2022-10-03 18:31:14,091 de.eq3.lib.util.dynamics.GenericFactory INFO  [main] created instance of HMServerConfiguration with parameter(s) 
+2022-10-03 18:31:14,091 de.eq3.lib.util.dynamics.GenericFactory INFO  [main] passed 1 parameter(s), in declarative order [String] 
+2022-10-03 18:31:14,092 de.eq3.ccu.server.BaseHMServer DEBUG [main] HM Server config file: /var/etc/HMServer.conf 
+2022-10-03 18:31:14,120 de.eq3.cbcs.server.local.base.LocalServerBase DEBUG [Thread-1] State changed from CONFIGURED to INITIALIZING 
+2022-10-03 18:31:14,143 io.vertx.core.logging.LoggerFactory DEBUG [Thread-1] Using io.vertx.core.logging.SLF4JLogDelegateFactory 
+2022-10-03 18:31:14,183 io.netty.util.internal.logging.InternalLoggerFactory DEBUG [Thread-1] Using SLF4J as the default logging framework 
+2022-10-03 18:31:14,187 io.netty.util.internal.PlatformDependent0 DEBUG [Thread-1] -Dio.netty.noUnsafe: false 
+2022-10-03 18:31:14,187 io.netty.util.internal.PlatformDependent0 DEBUG [Thread-1] Java version: 8 
+2022-10-03 18:31:14,188 io.netty.util.internal.PlatformDependent0 DEBUG [Thread-1] sun.misc.Unsafe.theUnsafe: available 
+2022-10-03 18:31:14,189 io.netty.util.internal.PlatformDependent0 DEBUG [Thread-1] sun.misc.Unsafe.copyMemory: available 
+2022-10-03 18:31:14,189 io.netty.util.internal.PlatformDependent0 DEBUG [Thread-1] java.nio.Buffer.address: available 
+2022-10-03 18:31:14,189 io.netty.util.internal.PlatformDependent0 DEBUG [Thread-1] direct buffer constructor: available 
+2022-10-03 18:31:14,190 io.netty.util.internal.PlatformDependent0 DEBUG [Thread-1] java.nio.Bits.unaligned: available, true 
+2022-10-03 18:31:14,190 io.netty.util.internal.PlatformDependent0 DEBUG [Thread-1] jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9 
+2022-10-03 18:31:14,190 io.netty.util.internal.PlatformDependent0 DEBUG [Thread-1] java.nio.DirectByteBuffer.<init>(long, int): available 
+2022-10-03 18:31:14,190 io.netty.util.internal.PlatformDependent DEBUG [Thread-1] sun.misc.Unsafe: available 
+2022-10-03 18:31:14,190 io.netty.util.internal.PlatformDependent DEBUG [Thread-1] -Dio.netty.tmpdir: /tmp (java.io.tmpdir) 
+2022-10-03 18:31:14,190 io.netty.util.internal.PlatformDependent DEBUG [Thread-1] -Dio.netty.bitMode: 64 (sun.arch.data.model) 
+2022-10-03 18:31:14,191 io.netty.util.internal.PlatformDependent DEBUG [Thread-1] -Dio.netty.maxDirectMemory: 358088704 bytes 
+2022-10-03 18:31:14,191 io.netty.util.internal.PlatformDependent DEBUG [Thread-1] -Dio.netty.uninitializedArrayAllocationThreshold: -1 
+2022-10-03 18:31:14,192 io.netty.util.internal.CleanerJava6 DEBUG [Thread-1] java.nio.ByteBuffer.cleaner(): available 
+2022-10-03 18:31:14,192 io.netty.util.internal.PlatformDependent DEBUG [Thread-1] -Dio.netty.noPreferDirect: false 
+2022-10-03 18:31:14,228 io.netty.util.ResourceLeakDetector DEBUG [Thread-1] -Dio.netty.leakDetection.level: simple 
+2022-10-03 18:31:14,229 io.netty.util.ResourceLeakDetector DEBUG [Thread-1] -Dio.netty.leakDetection.targetRecords: 4 
+2022-10-03 18:31:14,251 io.netty.channel.MultithreadEventLoopGroup DEBUG [Thread-1] -Dio.netty.eventLoopThreads: 4 
+2022-10-03 18:31:14,266 io.netty.util.internal.InternalThreadLocalMap DEBUG [Thread-1] -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024 
+2022-10-03 18:31:14,266 io.netty.util.internal.InternalThreadLocalMap DEBUG [Thread-1] -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096 
+2022-10-03 18:31:14,274 io.netty.channel.nio.NioEventLoop DEBUG [Thread-1] -Dio.netty.noKeySetOptimization: false 
+2022-10-03 18:31:14,274 io.netty.channel.nio.NioEventLoop DEBUG [Thread-1] -Dio.netty.selectorAutoRebuildThreshold: 512 
+2022-10-03 18:31:14,279 io.netty.util.internal.PlatformDependent DEBUG [Thread-1] org.jctools-core.MpscChunkedArrayQueue: available 
+2022-10-03 18:31:14,288 io.netty.channel.nio.NioEventLoop TRACE [Thread-1] instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@28553c21 
+2022-10-03 18:31:14,288 io.netty.channel.nio.NioEventLoop TRACE [Thread-1] instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@79215e4f 
+2022-10-03 18:31:14,288 io.netty.channel.nio.NioEventLoop TRACE [Thread-1] instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@7814d17e 
+2022-10-03 18:31:14,288 io.netty.channel.nio.NioEventLoop TRACE [Thread-1] instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@47c50c03 
+2022-10-03 18:31:14,289 io.netty.channel.nio.NioEventLoop TRACE [Thread-1] instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@7896b6eb 
+2022-10-03 18:31:14,308 io.netty.resolver.dns.DefaultDnsServerAddressStreamProvider DEBUG [Thread-1] Default DNS servers: [/10.0.0.2:53, /10.0.0.3:53] (sun.net.dns.ResolverConfiguration) 
+2022-10-03 18:31:14,313 io.netty.util.NetUtil DEBUG [Thread-1] -Djava.net.preferIPv4Stack: false 
+2022-10-03 18:31:14,313 io.netty.util.NetUtil DEBUG [Thread-1] -Djava.net.preferIPv6Addresses: false 
+2022-10-03 18:31:14,314 io.netty.util.NetUtilInitializations DEBUG [Thread-1] Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%lo) 
+2022-10-03 18:31:14,315 io.netty.util.NetUtil DEBUG [Thread-1] /proc/sys/net/core/somaxconn: 4096 
+2022-10-03 18:31:14,329 de.eq3.vertx.manager.management.VertxManager DEBUG [Thread-1] State changed from NONE to INITIALIZED 
+2022-10-03 18:31:14,330 de.eq3.cbcs.server.local.base.LocalServerBase DEBUG [Thread-1] State changed from INITIALIZING to INITIALIZED 
+2022-10-03 18:31:14,330 de.eq3.cbcs.server.local.base.LocalServerBase DEBUG [Thread-1] State changed from INITIALIZED to STARTING 
+2022-10-03 18:31:15,152 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [HMIPTRXWriterWorker] (1) *worker 
+2022-10-03 18:31:15,152 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [KeyServerWorker] (1) *worker 
+2022-10-03 18:31:15,152 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [KryoPersistenceWorker] (1) *worker 
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [TransactionSubsystemHandler] (1) *worker 
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [FirmwareLoaderFileSystem] (1) *worker 
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [LocalServerPersistentDataLoader] (1)  
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [LocalServerAdapterInitialization] (1)  
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [TransactionManagementVerticle] (1)  
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [BackendCommandHandler] (1)  
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [DeviceInclusionAcceptHandler] (1)  
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [CheckDeviceExistHandler] (1)  
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [IncomingHMIPFrameHandler] (1)  
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [DeviceBackgroundUpdateSubsystem] (1)  
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [DeviceLiveUpdateSubsystem] (1)  
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [DeviceDefaultConfigurationChanger] (1)  
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [CyclicSmokeDetectorAwakening] (1)  
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [DisplayUpdateStatusHandler] (1)  
+2022-10-03 18:31:15,153 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [LocalServerFirmwareUpdateInitialization] (1)  
+2022-10-03 18:31:15,158 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [RoutingNotificationHandler] (1)  
+2022-10-03 18:31:15,158 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [BackboneWorker] (1) *worker 
+2022-10-03 18:31:15,158 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [RouteManagementWorker] (1) *worker 
+2022-10-03 18:31:15,160 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [LegacyNotificationHandler] (1) *worker 
+2022-10-03 18:31:15,161 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [LegacyAPIWorker] (1) *worker 
+2022-10-03 18:31:15,161 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [LegacyBackendNotificationHandler] (3) *worker 
+2022-10-03 18:31:15,161 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [LegacyBlindLevelCorrectionHandler] (1) *worker 
+2022-10-03 18:31:15,161 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: added for deployment [LegacyInitializion] (1)  
+2022-10-03 18:31:15,164 de.eq3.vertx.manager.management.VertxManager DEBUG [Thread-1] State changed from INITIALIZED to PERFORMING_INITIAL_DEPLOYMENT 
+2022-10-03 18:31:15,164 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: deploying 26 classes to Vert.x 
+2022-10-03 18:31:15,253 de.eq3.vertx.manager.management.VertxManager INFO  [Thread-1] SYSTEM: 26 VertxDeployers initialized 
+2022-10-03 18:31:15,289 de.eq3.cbcs.legacy.bidcos.rpc.internal.LegacyBlindLevelCorrectionHandler INFO  [vert.x-worker-thread-0] SYSTEM: LegacyBlindLevelCorrectionHandler Verticle or Worker started 
+2022-10-03 18:31:15,293 de.eq3.cbcs.server.core.vertx.CyclicSmokeDetectorAwakening INFO  [vert.x-eventloop-thread-3] SYSTEM: CyclicSmokeDetectorAwakening Verticle or Worker started 
+2022-10-03 18:31:15,295 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-0] SYSTEM: start of CyclicSmokeDetectorAwakening succeeded (57d7b914-1e62-4a5d-bebe-5acdb615ff5d) 
+2022-10-03 18:31:15,295 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-0] SYSTEM: start of LegacyBlindLevelCorrectionHandler succeeded (21f44ecb-81f7-4183-8029-9fb7824413b1) 
+2022-10-03 18:31:15,297 de.eq3.cbcs.server.core.vertx.HMIPAbstractWriterWorker INFO  [vert.x-worker-thread-1] SYSTEM: HMIPTRXWriterWorker Verticle or Worker started 
+2022-10-03 18:31:15,302 de.eq3.cbcs.server.core.vertx.CheckDeviceExistHandler INFO  [vert.x-eventloop-thread-2] SYSTEM: CheckDeviceExistHandler Verticle or Worker started 
+2022-10-03 18:31:15,302 de.eq3.cbcs.server.core.persistence.AbstractPersistency DEBUG [vert.x-worker-thread-2] start KryoPersistenceWorker 
+2022-10-03 18:31:15,307 de.eq3.cbcs.server.core.vertx.DeviceDefaultConfigurationChanger INFO  [vert.x-eventloop-thread-3] SYSTEM: DeviceDefaultConfigurationChanger Verticle or Worker started 
+2022-10-03 18:31:15,307 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-2] SYSTEM: start of DeviceDefaultConfigurationChanger succeeded (348b3dc7-a93d-4e16-8f56-a3853bc451bf) 
+2022-10-03 18:31:15,307 de.eq3.cbcs.server.core.vertx.TransactionSubsystemHandler INFO  [vert.x-worker-thread-3] SYSTEM: TransactionSubsystemHandler Verticle or Worker started 
+2022-10-03 18:31:15,352 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-2] SYSTEM: start of KryoPersistenceWorker succeeded (8fa83c09-515c-44d9-ab63-47f8010c96a7) 
+2022-10-03 18:31:15,502 de.eq3.cbcs.server.core.otau.AbstractUpdateSubsystem INFO  [vert.x-eventloop-thread-3] SYSTEM: DeviceBackgroundUpdateSubsystem Verticle or Worker started 
+2022-10-03 18:31:15,502 de.eq3.cbcs.server.core.otau.AbstractUpdateSubsystem INFO  [vert.x-eventloop-thread-1] SYSTEM: DeviceLiveUpdateSubsystem Verticle or Worker started 
+2022-10-03 18:31:15,502 de.eq3.cbcs.server.core.live_otau.DeviceLiveUpdateSubsystem INFO  [vert.x-eventloop-thread-1] SYSTEM: DeviceLiveUpdateSubsystem started 
+2022-10-03 18:31:15,504 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-0] SYSTEM: start of DeviceLiveUpdateSubsystem succeeded (98c86aa5-e2b2-4205-8cd7-264e4458f862) 
+2022-10-03 18:31:15,505 de.eq3.cbcs.server.core.vertx.DisplayUpdateStatusHandler INFO  [vert.x-eventloop-thread-1] SYSTEM: DisplayUpdateStatusHandler Verticle or Worker started 
+2022-10-03 18:31:15,505 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-0] SYSTEM: start of DisplayUpdateStatusHandler succeeded (969a10ea-5cc9-43f1-8a97-012f402ac515) 
+2022-10-03 18:31:15,505 de.eq3.cbcs.server.core.vertx.RoutingNotificationHandler INFO  [vert.x-eventloop-thread-2] SYSTEM: RoutingNotificationHandler Verticle or Worker started 
+2022-10-03 18:31:15,505 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-1] SYSTEM: start of HMIPTRXWriterWorker succeeded (f5f36b4c-17de-43e8-bdaf-d24cd3a43fe0) 
+2022-10-03 18:31:15,505 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-1] SYSTEM: start of CheckDeviceExistHandler succeeded (9c23591e-a9d2-4cfa-953f-0c871b294ed8) 
+2022-10-03 18:31:15,512 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-3] SYSTEM: start of TransactionSubsystemHandler succeeded (3e495e9b-0483-40a8-85d1-f576d18eba7d) 
+2022-10-03 18:31:15,516 de.eq3.cbcs.server.local.base.internal.LocalServerPersistentDataLoader INFO  [vert.x-eventloop-thread-1] SYSTEM: LocalServerPersistentDataLoader Verticle or Worker started 
+2022-10-03 18:31:15,516 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-2] SYSTEM: start of LocalServerPersistentDataLoader succeeded (b3ad3702-3948-4c0b-9081-a332235bc435) 
+2022-10-03 18:31:15,516 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-1] SYSTEM: start of RoutingNotificationHandler succeeded (0a017870-18eb-4412-8f11-2f28da0804a6) 
+2022-10-03 18:31:15,517 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-1] SYSTEM: start of DeviceBackgroundUpdateSubsystem succeeded (57a66b3e-2b11-4588-9c21-871cc7e1fb1b) 
+2022-10-03 18:31:15,518 de.eq3.cbcs.util.core.ServicePropertyHelper TRACE [vert.x-worker-thread-4] Property Network.Key not found in main config file. Alternative config file Network.Key.File not given either. Use default value... 
+2022-10-03 18:31:15,518 de.eq3.cbcs.server.core.vertx.KeyServerWorker ERROR [vert.x-worker-thread-4] Missing key server configuration parameter (Network.Key) for  mode: KEYSERVER_LOCAL 
+2022-10-03 18:31:15,518 de.eq3.cbcs.server.core.vertx.KeyServerWorker INFO  [vert.x-worker-thread-4] SYSTEM: KeyServerWorker Verticle or Worker started 
+2022-10-03 18:31:15,520 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-1] SYSTEM: start of KeyServerWorker succeeded (59c98cfa-22a3-44b7-b27b-d8ace255915f) 
+2022-10-03 18:31:15,521 de.eq3.cbcs.server.core.persistence.AbstractPersistency TRACE [vert.x-worker-thread-0] SYSTEM: received persistence command: PERSISTENCE_COMMAND_LOAD_ACESS_POINTS 
+2022-10-03 18:31:15,554 de.eq3.cbcs.server.core.persistence.AbstractPersistency DEBUG [vert.x-worker-thread-0] Load access point from file: 3014F711A00003D5699A50C0 
+2022-10-03 18:31:15,555 de.eq3.cbcs.server.core.persistence.AbstractPersistency TRACE [vert.x-worker-thread-1] SYSTEM: received persistence command: PERSISTENCE_COMMAND_LOAD_DEVICES 
+2022-10-03 18:31:15,556 de.eq3.cbcs.server.core.persistence.AbstractPersistency WARN  [vert.x-worker-thread-1] AP 3014F711A00003D5699A50C0: No device description found for manufacturer code: 1 device type 270 sgtin 3014F711A00003D5699A50C0 
+2022-10-03 18:31:16,683 de.eq3.vertx.manager.management.VertxManager DEBUG [pool-2-thread-5] SYSTEM: <> Contract condition 'persistent.data.loaded' met for FirmwareLoaderFileSystem 
+2022-10-03 18:31:16,684 de.eq3.cbcs.server.core.otau.util.FirmwareLoaderFileSystem INFO  [vert.x-worker-thread-3] SYSTEM: Firmware update directory is set to /etc/config/firmware 
+2022-10-03 18:31:16,684 de.eq3.cbcs.server.core.otau.util.FirmwareLoaderFileSystem INFO  [vert.x-worker-thread-3] SYSTEM: FirmwareLoaderFileSystem Verticle or Worker started 
+2022-10-03 18:31:16,685 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-0] SYSTEM: start of FirmwareLoaderFileSystem succeeded (1992927c-6b59-4060-907b-d82c22019bdd) 
+2022-10-03 18:31:16,708 de.eq3.vertx.manager.management.VertxManager DEBUG [pool-2-thread-7] SYSTEM: <> Contract condition 'persistent.data.loaded' met for LocalServerAdapterInitialization 
+2022-10-03 18:31:16,708 de.eq3.vertx.manager.management.VertxManager DEBUG [pool-2-thread-8] SYSTEM: <> Contract condition 'persistent.data.loaded' met for TransactionManagementVerticle 
+2022-10-03 18:31:16,709 de.eq3.vertx.manager.management.VertxManager DEBUG [pool-2-thread-10] SYSTEM: <> Contract condition 'persistent.data.loaded' met for DeviceInclusionAcceptHandler 
+2022-10-03 18:31:16,709 de.eq3.cbcs.server.core.vertx.DeviceInclusionAcceptHandler INFO  [vert.x-eventloop-thread-2] SYSTEM: DeviceInclusionAcceptHandler Verticle or Worker started 
+2022-10-03 18:31:16,710 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-2] SYSTEM: start of DeviceInclusionAcceptHandler succeeded (63763b51-d43d-4c54-87e1-ac0c0b7796c6) 
+2022-10-03 18:31:16,710 de.eq3.cbcs.util.core.ServicePropertyHelper TRACE [vert.x-eventloop-thread-1] Property Network.Key not found in main config file. Alternative config file Network.Key.File not given either. Use default value... 
+2022-10-03 18:31:16,710 de.eq3.cbcs.util.core.ServicePropertyHelper TRACE [vert.x-eventloop-thread-1] Property Backbone.Key not found in main config file. Alternative config file Network.Key.File not given either. Use default value... 
+2022-10-03 18:31:16,713 de.eq3.cbcs.server.core.transaction.TransactionManagementVerticle DEBUG [vert.x-eventloop-thread-3] SYSTEM: TransactionManagementVerticle (ID 0) started 
+2022-10-03 18:31:16,715 de.eq3.cbcs.server.core.transaction.TransactionManagementVerticle INFO  [vert.x-eventloop-thread-3] SYSTEM: TransactionManagementVerticle Verticle or Worker started 
+2022-10-03 18:31:16,715 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-0] SYSTEM: start of TransactionManagementVerticle succeeded (b978e08c-15e4-43b7-bd1a-b84a7820f5e8) 
+2022-10-03 18:31:16,724 de.eq3.vertx.manager.management.VertxManager DEBUG [pool-2-thread-11] SYSTEM: <> Contract condition 'persistent.data.loaded' met for IncomingHMIPFrameHandler 
+2022-10-03 18:31:16,725 de.eq3.cbcs.server.core.vertx.IncomingHMIPFrameHandler INFO  [vert.x-eventloop-thread-0] SYSTEM: IncomingHMIPFrameHandler Verticle or Worker started 
+2022-10-03 18:31:16,725 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-3] SYSTEM: start of IncomingHMIPFrameHandler succeeded (4e2dd080-ea1d-494f-b9d5-8569779059eb) 
+2022-10-03 18:31:16,731 de.eq3.vertx.manager.management.VertxManager DEBUG [pool-2-thread-13] SYSTEM: <> Contract condition 'firmware.update.subsystem.started' met for LocalServerFirmwareUpdateInitialization 
+2022-10-03 18:31:16,731 de.eq3.vertx.manager.management.VertxManager DEBUG [pool-2-thread-13] SYSTEM: <> Contract condition 'persistent.data.loaded' met for LocalServerFirmwareUpdateInitialization 
+2022-10-03 18:31:16,743 de.eq3.cbcs.server.local.base.internal.LocalServerAdapterInitialization DEBUG [vert.x-eventloop-thread-1] Identify application 
+2022-10-03 18:31:16,743 de.eq3.cbcs.server.local.base.internal.LocalServerAdapterInitialization DEBUG [vert.x-eventloop-thread-1] Added HMIP Adapter 
+2022-10-03 18:31:16,744 de.eq3.cbcs.server.local.base.internal.LocalServerAdapterInitialization INFO  [vert.x-eventloop-thread-1] SYSTEM: LocalServerAdapterInitialization Verticle or Worker started 
+2022-10-03 18:31:16,744 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-3] SYSTEM: start of LocalServerAdapterInitialization succeeded (badb8c41-2e52-4c7b-8cc6-36af5f3849ec) 
+2022-10-03 18:31:16,747 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 0 
+2022-10-03 18:31:16,780 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 1 
+2022-10-03 18:31:16,780 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] TRX adapter state 1: HMIP_TRX_App 
+2022-10-03 18:31:16,780 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] TRX adapter application is already running or started 
+2022-10-03 18:31:16,780 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] No NWK, try to set address ... 
+2022-10-03 18:31:16,780 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] Try to set radio address 11786687... 
+2022-10-03 18:31:16,785 de.eq3.vertx.manager.management.VertxManager DEBUG [pool-2-thread-18] SYSTEM: <> Contract condition 'persistent.data.loaded' met for LegacyInitializion 
+2022-10-03 18:31:16,801 de.eq3.cbcs.lib.hmiptrxcommadapter.internal.HMIPStack TRACE [RXTXPortMonitor(/dev/mmd_hmip)] AP 3014F711A00003D5699A50C0: HMIP Stack response 1 
+2022-10-03 18:31:16,801 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 6 
+2022-10-03 18:31:16,801 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] Set max send attempts for 3014F711A00003D5699A50C0 to 3 
+2022-10-03 18:31:16,823 de.eq3.cbcs.lib.hmiptrxcommadapter.internal.HMIPStack TRACE [RXTXPortMonitor(/dev/mmd_hmip)] AP 3014F711A00003D5699A50C0: HMIP Stack response 1 
+2022-10-03 18:31:16,823 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 7 
+2022-10-03 18:31:16,823 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] Try to get application version... 
+2022-10-03 18:31:16,845 de.eq3.cbcs.lib.hmiptrxcommadapter.internal.TRXAdapter TRACE [RXTXPortMonitor(/dev/mmd_hmip)] AP 3014F711A00003D5699A50C0: trx adapter response 
+2022-10-03 18:31:16,845 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 8 
+2022-10-03 18:31:16,845 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] Application version 4.4.18 
+2022-10-03 18:31:16,845 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] Bootloader version 1.0.11 
+2022-10-03 18:31:16,845 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] hmos version 1.64.0 
+2022-10-03 18:31:16,958 de.eq3.cbcs.lib.hmiptrxcommadapter.internal.TRXAdapter TRACE [RXTXPortMonitor(/dev/mmd_hmip)] AP 3014F711A00003D5699A50C0: trx adapter response 
+2022-10-03 18:31:16,958 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 9 
+2022-10-03 18:31:16,958 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] MCU type: EFM32G200F64_CM3 
+2022-10-03 18:31:16,959 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Skip setting backbone key wrong version 4.4.18 or mcu type EFM32G200F64_CM3 
+2022-10-03 18:31:16,980 de.eq3.cbcs.lib.hmiptrxcommadapter.internal.TRXAdapter TRACE [RXTXPortMonitor(/dev/mmd_hmip)] AP 3014F711A00003D5699A50C0: trx adapter response 
+2022-10-03 18:31:16,981 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 10 
+2022-10-03 18:31:16,981 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] Duty Cycle: 0.0 
+2022-10-03 18:31:16,981 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] set DutyCycle limit to ffffffc8 
+2022-10-03 18:31:17,094 de.eq3.cbcs.lib.hmiptrxcommadapter.internal.TRXAdapter TRACE [RXTXPortMonitor(/dev/mmd_hmip)] AP 3014F711A00003D5699A50C0: trx adapter response 
+2022-10-03 18:31:17,095 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 11 
+2022-10-03 18:31:17,095 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] Set Duty Cycle Limit 
+2022-10-03 18:31:17,115 de.eq3.cbcs.lib.hmiptrxcommadapter.internal.HMIPStack TRACE [RXTXPortMonitor(/dev/mmd_hmip)] AP 3014F711A00003D5699A50C0: HMIP Stack response 1 
+2022-10-03 18:31:17,116 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 12 
+2022-10-03 18:31:17,116 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] Current Security Counter: 2182588928 
+2022-10-03 18:31:17,116 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Access point exchanged or exists => Check security counter ... 
+2022-10-03 18:31:17,116 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] time difference: 7268228536; current: 1664868677116; firstConnect: 1657600448580; offset: 2158363838 
+2022-10-03 18:31:17,116 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener INFO  [RXTXPortMonitor(/dev/mmd_hmip)] Update security counter to calculation: 2182591267 
+2022-10-03 18:31:17,137 de.eq3.cbcs.lib.hmiptrxcommadapter.internal.HMIPStack TRACE [RXTXPortMonitor(/dev/mmd_hmip)] AP 3014F711A00003D5699A50C0: HMIP Stack response 1 
+2022-10-03 18:31:17,137 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 14 
+2022-10-03 18:31:17,138 de.eq3.cbcs.server.core.persistence.AbstractPersistency TRACE [vert.x-worker-thread-2] AP 3014F711A00003D5699A50C0: Receive persistence command: PERSISTENCE_COMMAND_LOAD_NETWORK_KEY_EXCHANGE_DATA 
+2022-10-03 18:31:17,185 de.eq3.cbcs.lib.hmiptrxcommadapter.internal.HMIPStack TRACE [RXTXPortMonitor(/dev/mmd_hmip)] AP 3014F711A00003D5699A50C0: HMIP Stack response 1 
+2022-10-03 18:31:17,185 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 16 
+2022-10-03 18:31:17,186 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Initialize routing with value true 
+2022-10-03 18:31:17,186 de.eq3.cbcs.server.core.persistence.AbstractPersistency TRACE [vert.x-worker-thread-4] AP 3014F711A00003D5699A50C0: Receive persistence command: PERSISTENCE_COMMAND_SAVE_ACESS_POINT 
+2022-10-03 18:31:17,206 de.eq3.cbcs.lib.hmiptrxcommadapter.internal.BackboneSubsystem TRACE [RXTXPortMonitor(/dev/mmd_hmip)] AP 3014F711A00003D5699A50C0: backbone subsystem response 1 
+2022-10-03 18:31:17,206 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 18 
+2022-10-03 18:31:17,207 de.eq3.cbcs.server.core.persistence.AbstractPersistency TRACE [vert.x-worker-thread-0] AP 3014F711A00003D5699A50C0: Receive persistence command: PERSISTENCE_COMMAND_LOAD_BACKBONE_KEY_EXCHANGE_DATA 
+2022-10-03 18:31:17,259 de.eq3.cbcs.lib.hmiptrxcommadapter.internal.BackboneSubsystem TRACE [RXTXPortMonitor(/dev/mmd_hmip)] AP 3014F711A00003D5699A50C0: backbone subsystem response 1 
+2022-10-03 18:31:17,259 de.eq3.cbcs.server.local.base.internal.HMIPTRXInitialResponseListener DEBUG [RXTXPortMonitor(/dev/mmd_hmip)] Received adapter response for transaction ID 21 
+2022-10-03 18:31:17,260 de.eq3.cbcs.server.core.persistence.AbstractPersistency TRACE [vert.x-worker-thread-1] AP 3014F711A00003D5699A50C0: Receive persistence command: PERSISTENCE_COMMAND_SAVE_ACESS_POINT 
+2022-10-03 18:31:18,211 de.eq3.vertx.manager.management.VertxManager DEBUG [pool-2-thread-9] SYSTEM: <> Contract condition 'transaction.management.ready' met for BackendCommandHandler 
+2022-10-03 18:31:18,214 de.eq3.cbcs.util.core.ServicePropertyHelper TRACE [vert.x-eventloop-thread-2] Property Network.Key not found in main config file. Alternative config file Network.Key.File not given either. Use default value... 
+2022-10-03 18:31:18,218 de.eq3.cbcs.server.core.vertx.BackendCommandHandler INFO  [vert.x-eventloop-thread-2] SYSTEM: BackendCommandHandler Verticle or Worker started 
+2022-10-03 18:31:18,219 de.eq3.vertx.manager.management.VertxManager INFO  [vert.x-eventloop-thread-1] SYSTEM: start of BackendCommandHandler succeeded (1a855932-f46b-49ce-8360-4b60c24dcff2) 
+2022-10-03 18:31:22,235 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-0] SYSTEM ADVICE: pre-conditions for deployment of BackboneWorker still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:22,235 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-2] SYSTEM ADVICE: pre-conditions for deployment of LocalServerFirmwareUpdateInitialization still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:22,240 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-0] SYSTEM ADVICE: pre-conditions for deployment of LegacyNotificationHandler still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:22,240 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-1] SYSTEM ADVICE: pre-conditions for deployment of LegacyAPIWorker still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:22,240 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-2] SYSTEM ADVICE: pre-conditions for deployment of RouteManagementWorker still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:22,246 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-3] SYSTEM ADVICE: pre-conditions for deployment of LegacyBackendNotificationHandler still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:22,254 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-2] SYSTEM ADVICE: pre-conditions for deployment of LegacyInitializion still not met - check deployment configuration  (still unfulfilled: [legacy.api.worker][connector.open]) 
+2022-10-03 18:31:29,171 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-0] SYSTEM ADVICE: long-lasting deployment, check deployment configuration - currently deployed 19 out of 26 
+2022-10-03 18:31:29,233 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-0] SYSTEM ADVICE: pre-conditions for deployment of BackboneWorker still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:29,233 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-2] SYSTEM ADVICE: pre-conditions for deployment of LocalServerFirmwareUpdateInitialization still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:29,240 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-0] SYSTEM ADVICE: pre-conditions for deployment of LegacyNotificationHandler still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:29,247 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-2] SYSTEM ADVICE: pre-conditions for deployment of RouteManagementWorker still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:29,247 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-1] SYSTEM ADVICE: pre-conditions for deployment of LegacyAPIWorker still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:29,247 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-3] SYSTEM ADVICE: pre-conditions for deployment of LegacyBackendNotificationHandler still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:29,288 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-2] SYSTEM ADVICE: pre-conditions for deployment of LegacyInitializion still not met - check deployment configuration  (still unfulfilled: [legacy.api.worker][connector.open]) 
+2022-10-03 18:31:30,503 de.eq3.cbcs.server.core.otau.DeviceBackgroundUpdateSubsystem TRACE [vert.x-eventloop-thread-3] SYSTEM: OTAU periodic start handler is trying to start a handler 
+2022-10-03 18:31:30,503 de.eq3.cbcs.server.core.otau.DeviceBackgroundUpdateSubsystem TRACE [vert.x-eventloop-thread-3] SYSTEM: No suitable AP found - cannot start any RF update handlers 
+2022-10-03 18:31:30,503 de.eq3.cbcs.server.core.otau.DeviceBackgroundUpdateSubsystem TRACE [vert.x-eventloop-thread-3] SYSTEM: No suitable AP found - cannot start any wired update handlers 
+2022-10-03 18:31:36,238 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-0] SYSTEM ADVICE: pre-conditions for deployment of BackboneWorker still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:36,238 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-2] SYSTEM ADVICE: pre-conditions for deployment of LocalServerFirmwareUpdateInitialization still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:36,240 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-2] SYSTEM ADVICE: pre-conditions for deployment of RouteManagementWorker still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:36,240 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-0] SYSTEM ADVICE: pre-conditions for deployment of LegacyNotificationHandler still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:36,246 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-3] SYSTEM ADVICE: pre-conditions for deployment of LegacyBackendNotificationHandler still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:36,247 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-1] SYSTEM ADVICE: pre-conditions for deployment of LegacyAPIWorker still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:36,254 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-2] SYSTEM ADVICE: pre-conditions for deployment of LegacyInitializion still not met - check deployment configuration  (still unfulfilled: [legacy.api.worker][connector.open]) 
+2022-10-03 18:31:43,174 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-0] SYSTEM ADVICE: long-lasting deployment, check deployment configuration - currently deployed 19 out of 26 
+2022-10-03 18:31:43,232 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-0] SYSTEM ADVICE: pre-conditions for deployment of BackboneWorker still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:43,238 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-2] SYSTEM ADVICE: pre-conditions for deployment of LocalServerFirmwareUpdateInitialization still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:43,240 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-0] SYSTEM ADVICE: pre-conditions for deployment of LegacyNotificationHandler still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:43,240 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-2] SYSTEM ADVICE: pre-conditions for deployment of RouteManagementWorker still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:43,246 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-3] SYSTEM ADVICE: pre-conditions for deployment of LegacyBackendNotificationHandler still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:43,246 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-1] SYSTEM ADVICE: pre-conditions for deployment of LegacyAPIWorker still not met - check deployment configuration  (still unfulfilled: [connector.open]) 
+2022-10-03 18:31:43,255 de.eq3.vertx.manager.management.VertxManager WARN  [vert.x-eventloop-thread-2] SYSTEM ADVICE: pre-conditions for deployment of LegacyInitializion still not met - check deployment configuration  (still unfulfilled: [legacy.api.worker][connector.open]) 
+2022-10-03 18:31:45,504 de.eq3.cbcs.server.core.otau.DeviceBackgroundUpdateSubsystem TRACE [vert.x-eventloop-thread-3] SYSTEM: OTAU periodic start handler is trying to start a handler 
+2022-10-03 18:31:45,504 de.eq3.cbcs.server.core.otau.DeviceBackgroundUpdateSubsystem TRACE [vert.x-eventloop-thread-3] SYSTEM: No suitable AP found - cannot start any RF update handlers 
+2022-10-03 18:31:45,504 de.eq3.cbcs.server.core.otau.DeviceBackgroundUpdateSubsystem TRACE [vert.x-eventloop-thread-3] SYSTEM: No suitable AP found - cannot start any wired update handlers 
+...
