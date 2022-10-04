@@ -118,12 +118,13 @@ void RadioModuleConnector::sendFrame(unsigned char *buffer, uint16_t len)
 
 void RadioModuleConnector::_serialQueueHandler()
 {
+	volatile uint8_t rcvbyte[255] = {0};
+	volatile uint16_t len = 1;
+    unsigned char UART_RcvBuffer[255]={0};
+	uint16_t rxlen;
+
     for (;;)
     {
-    	uint8_t rcvbyte[255] = {0};
-    	uint16_t rxlen;
-    	unsigned char UART_RcvBuffer[255]={0};
-    	uint16_t len = 1;
     	taskENTER_CRITICAL();
     	while (__HAL_UART_GET_FLAG(&huart5, UART_FLAG_RXNE) == SET) {
     	    HAL_UART_Receive(&huart5, (uint8_t *)rcvbyte, 1, 0);
@@ -139,9 +140,10 @@ void RadioModuleConnector::_serialQueueHandler()
     	         		//memset(UART_RcvBuffer, 0, 255);
       	    			UART_RcvBuffer[0] = 0xFD;
     	    		}
-    	    		len++;
+    	    		len = len + 1;
     	    	}
     	    	_streamParser->append(UART_RcvBuffer, len);
+    	    	len = 1;
         		//memset(UART_RcvBuffer, 0, 255);
          		//memset(rcvbyte, 0, 255);
     	    }
