@@ -132,7 +132,12 @@ void startMainTask(void *argument) {
   redLED.setState(LED_STATE_OFF);
   greenLED.setState(LED_STATE_BLINK);
   printf("Initialization done.\n");
+  int lastLEDBrightness = -1;
   for(;;)  {
+	if (lastLEDBrightness != settings.getLEDBrightness()) {
+		lastLEDBrightness = settings.getLEDBrightness();
+		LED::start(&settings, &htim3);
+	}
     vTaskDelay(1000 / portTICK_PERIOD_MS);
   	uint32_t regvalue;
      	if (HAL_ETH_ReadPHYRegister(&heth, PHY_BSR, &regvalue) == HAL_OK) {
