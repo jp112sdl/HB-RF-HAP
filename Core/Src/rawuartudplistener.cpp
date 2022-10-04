@@ -79,19 +79,19 @@ void RawUartUdpListener::handlePacket(pbuf *pb, ip4_addr_t addr, uint16_t port)
 
     if (length < 4)
     {
-        printf("Received invalid raw-uart packet, length %d", length);
+        printf("Received invalid raw-uart packet, length %d\n", length);
         return;
     }
 
     if (data[0] != 0 && (addr.addr != atomic_load(&_remoteAddress) || port != atomic_load(&_remotePort)))
     {
-        printf("Received raw-uart packet from invalid address.");
+        printf("Received raw-uart packet from invalid address.\n");
         return;
     }
 
     if (*((uint16_t *)(data + length - 2)) != htons(HMFrame::crc(data, length - 2)))
     {
-        printf("Received raw-uart packet with invalid crc.");
+        printf("Received raw-uart packet with invalid crc.\n");
         return;
     }
 
@@ -123,7 +123,7 @@ void RawUartUdpListener::handlePacket(pbuf *pb, ip4_addr_t addr, uint16_t port)
             }
             else if (data[3] != (endpointConnectionIdentifier & 0xff))
             {
-                printf("Received raw-uart reconnect packet with invalid endpoint identifier %d, should be %d", data[3], endpointConnectionIdentifier);
+                printf("Received raw-uart reconnect packet with invalid endpoint identifier %d, should be %d\n", data[3], endpointConnectionIdentifier);
                 return;
             }
 
@@ -137,7 +137,7 @@ void RawUartUdpListener::handlePacket(pbuf *pb, ip4_addr_t addr, uint16_t port)
             sendMessage(0, response_buffer, 3);
         }
         else {
-            printf("Received invalid raw-uart connect packet, length %d", length);
+            printf("Received invalid raw-uart connect packet, length %d\n", length);
             return;
         }
         break;
@@ -155,7 +155,7 @@ void RawUartUdpListener::handlePacket(pbuf *pb, ip4_addr_t addr, uint16_t port)
     case 3: // LED
         if (length != 5)
         {
-            printf("Received invalid raw-uart LED packet, length %d", length);
+            printf("Received invalid raw-uart LED packet, length %d\n", length);
             return;
         }
 
@@ -165,7 +165,7 @@ void RawUartUdpListener::handlePacket(pbuf *pb, ip4_addr_t addr, uint16_t port)
     case 4: // Reset
         if (length != 4)
         {
-            printf("Received invalid raw-uart reset packet, length %d", length);
+            printf("Received invalid raw-uart reset packet, length %d\n", length);
             return;
         }
 
@@ -175,7 +175,7 @@ void RawUartUdpListener::handlePacket(pbuf *pb, ip4_addr_t addr, uint16_t port)
     case 5: // Start connection
         if (length != 4)
         {
-            printf("Received invalid raw-uart startconn packet, length %d", length);
+            printf("Received invalid raw-uart startconn packet, length %d\n", length);
             return;
         }
 
@@ -185,7 +185,7 @@ void RawUartUdpListener::handlePacket(pbuf *pb, ip4_addr_t addr, uint16_t port)
     case 6: // End connection
         if (length != 4)
         {
-            printf("Received invalid raw-uart endconn packet, length %d", length);
+            printf("Received invalid raw-uart endconn packet, length %d\n", length);
             return;
         }
 
@@ -195,17 +195,17 @@ void RawUartUdpListener::handlePacket(pbuf *pb, ip4_addr_t addr, uint16_t port)
     case 7: // Frame
         if (length < 5)
         {
-            printf("Received invalid raw-uart frame packet, length %d", length);
+            printf("Received invalid raw-uart frame packet, length %d\n", length);
             return;
         }
 
-        printf("RX [%d]: ",length); for ( uint8_t i = 0; i < length; i++) { printf(" %02x",data[i]); } printf("\n");
+        printf("RX [%d]: ",length); for ( uint8_t i = 2; i < length - 2; i++) { printf(" %02x",data[i]); } printf("\n");
 
         _radioModuleConnector->sendFrame(&data[2], length - 4);
         break;
 
     default:
-        printf("Received invalid raw-uart packet with unknown type %d", data[0]);
+        printf("Received invalid raw-uart packet with unknown type %d\n", data[0]);
         break;
     }
 }
@@ -257,7 +257,7 @@ void RawUartUdpListener::handleFrame(unsigned char *buffer, uint16_t len)
 
     if (len > (1500 - 28 - 4))
     {
-        printf("Received oversized frame from radio module, length %d", len);
+        printf("Received oversized frame from radio module, length %d\n", len);
         return;
     }
 
@@ -317,7 +317,7 @@ void RawUartUdpListener::_udpQueueHandler()
                 atomic_store(&_remotePort, (ushort)0);
                 atomic_store(&_remoteAddress, 0u);
                 _radioModuleConnector->setLED(true, false, false);
-                printf("Connection timed out");
+                printf("Connection timed out\n");
             }
 
             if (now > nextKeepAliveSentOut)
