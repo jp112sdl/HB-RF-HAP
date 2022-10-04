@@ -45,7 +45,6 @@ private:
     LED *_redLED;
     LED *_greenLED;
     LED *_blueLED;
-    std::atomic<FrameHandler *> _frameHandler = ATOMIC_VAR_INIT(0);
 
     void _handleFrame(unsigned char *buffer, uint16_t len);
 

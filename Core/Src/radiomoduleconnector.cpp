@@ -33,6 +33,7 @@ const osThreadAttr_t serialQueueHandlerTask_attributes = {
 };
  osThreadId_t _serialQueueHandlerTaskHandle = NULL;
 
+ std::atomic<FrameHandler *> _frameHandler = ATOMIC_VAR_INIT(0);
 
 static void UART5_Init(void) {
   huart5.Instance = UART5;
