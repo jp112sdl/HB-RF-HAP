@@ -8,8 +8,8 @@
   *          is using in the C source code, usually in main.c. This file contains:
   *            - Configuration section that allows to select:
   *              - The STM32F1xx device used in the target application
-  *              - To use or not the peripheral’s drivers in application code(i.e. 
-  *                code will be based on direct access to peripheral’s registers 
+  *              - To use or not the peripheralï¿½s drivers in application code(i.e. 
+  *                code will be based on direct access to peripheralï¿½s registers 
   *                rather than drivers API), this option is controlled by 
   *                "#define USE_HAL_DRIVER"
   *  
@@ -175,9 +175,9 @@ typedef enum
 /** @addtogroup Exported_macros
   * @{
   */
-#define SET_BIT(REG, BIT)     ((REG) |= (BIT))
+#define SET_BIT(REG, BIT)     ((REG) = (REG) | (BIT))
 
-#define CLEAR_BIT(REG, BIT)   ((REG) &= ~(BIT))
+#define CLEAR_BIT(REG, BIT)   ((REG) = (REG) &~(BIT))
 
 #define READ_BIT(REG, BIT)    ((REG) & (BIT))
 
