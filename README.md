@@ -1,0 +1,2 @@
+# HB-RF-HAP
+use HMIP-AP as HB-RF-ETH
