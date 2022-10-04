@@ -198,7 +198,8 @@ void RawUartUdpListener::handlePacket(pbuf *pb, ip4_addr_t addr, uint16_t port)
             return;
         }
 
-        printf("RX [%d]: ",length); for ( uint8_t i = 2; i < length - 2; i++) { printf(" %02x",data[i]); } printf("\n");
+        //printf("RX [%d]: ",length); for ( uint8_t i = 2; i < length - 2; i++) { printf(" %02x",data[i]); } printf("\n");
+        printf("RX [%d]\n",length);
 
         _radioModuleConnector->sendFrame(&data[2], length - 4);
         break;
@@ -260,7 +261,8 @@ void RawUartUdpListener::handleFrame(unsigned char *buffer, uint16_t len)
         return;
     }
 
-    printf("TX [%d]: ",len); for ( uint8_t i = 0; i < len; i++) { printf(" %02x",buffer[i]); } printf("\n");
+    //printf("TX [%d]: ",len); for ( uint8_t i = 0; i < len; i++) { printf(" %02x",buffer[i]); } printf("\n");
+    printf("TX [%d]\n",len);
 
     sendMessage(7, buffer, len);
 }
