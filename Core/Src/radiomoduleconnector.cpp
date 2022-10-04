@@ -28,7 +28,7 @@ UART_HandleTypeDef huart5;
 
 const osThreadAttr_t serialQueueHandlerTask_attributes = {
   .name = "RaMoQueueHandler",
-  .stack_size = 2304,
+  .stack_size = 2432,
   .priority = (osPriority_t) osPriorityNormal
 };
  osThreadId_t _serialQueueHandlerTaskHandle = NULL;

@@ -35,7 +35,7 @@ udp_pcb *_pcb;
 
 const osThreadAttr_t udpQueueHandlerTask_attributes = {
   .name = "UDPQueueHandler",
-  .stack_size = 2304,
+  .stack_size = 2432,
   .priority = (osPriority_t) osPriorityAboveNormal
 };
  osThreadId_t _udpQueueHandlerTaskHandle = NULL;
