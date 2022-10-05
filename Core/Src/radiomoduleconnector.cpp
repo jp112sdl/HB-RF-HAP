@@ -135,8 +135,8 @@ void RadioModuleConnector::_serialQueueHandler()
     	    	for (uint16_t i = 0; i < rxlen; i++) {
     	    		UART_RcvBuffer[len] = rcvbyte[i];
     	    		if (rcvbyte[i] == 0xFD) {
-    	    			_streamParser->append(UART_RcvBuffer, len);
-    	    			len = 1;
+    	    			_streamParser->append(UART_RcvBuffer, len+1);
+    	    			len = 0;
       	    			UART_RcvBuffer[0] = 0xFD;
     	    		}
     	    		len = len + 1;
