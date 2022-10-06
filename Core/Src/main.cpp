@@ -123,7 +123,7 @@ void startMainTask(void *argument) {
   rawUartUdpLister.start();
 
   printf("Starting WebUI\n");
-  webui.start();
+  webui.start(radioModuleDetector.getSGTIN(), radioModuleDetector.getFirmwareVersion());
 
   static char * last_ipaddr= {0};
   if (settings.getUseDHCP() == false) {

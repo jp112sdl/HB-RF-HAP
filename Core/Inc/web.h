@@ -14,5 +14,5 @@ class WebUI
 {
 public:
     WebUI(Settings *settings);
-    void start();
+    void start(const char * sgtin, const uint8_t * rfw);
 };

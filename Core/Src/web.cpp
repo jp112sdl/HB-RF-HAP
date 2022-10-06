@@ -21,12 +21,8 @@
 
 static Settings *_settings;
 
-template <class T>
-inline void DPRINT(T str);
-template <class T>
-inline void DPRINTLN(T str);
-template<typename TYPE>
-inline void DDECLN(TYPE b);
+const uint8_t * _rfw;
+const char * _sgtin;
 
 tSSIHandler SETTINGS_Page_SSI_Handler;
 
@@ -36,7 +32,11 @@ const char * ssi_tags[] = {
   "snetmsk",
   "gateway",
   "usedhcp",
-  "ledb"
+  "ledb",
+  "mac",
+  "cip",
+  "sgtin",
+  "rfw"
 };
 
 const char * SETTINGS_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]);
@@ -56,25 +56,37 @@ u16_t SETTINGS_SSI_Handler(int iIndex, char *pcInsert, int iInsertLen) {
 	  ip4_addr ip;
 	  switch (iIndex) {
 	    case 0: /* "hname" */
-		  printed =  sprintf(pcInsert, "<input value='%s' name='hname'>", hname);
+		  printed =  sprintf(pcInsert, "%s", hname);
 		  break;
 	    case 1: /* "ipaddr" */
 	      ip = _settings->getLocalIP();
-	      printed =  sprintf(pcInsert, "<input value='%s' name='ipaddr'>", ip4addr_ntoa(&ip));
+	      printed =  sprintf(pcInsert, "%s", ip4addr_ntoa(&ip));
 	      break;
 	    case 2: /* "snetmask" */
 		  ip = _settings->getNetmask();
-	      printed =  sprintf(pcInsert, "<input value='%s' name='snetmsk'>", ip4addr_ntoa(&ip));
+	      printed =  sprintf(pcInsert, "%s", ip4addr_ntoa(&ip));
 	      break;
 	    case 3: /* "gateway" */
 		  ip = _settings->getGateway();
-	      printed =  sprintf(pcInsert, "<input value='%s' name='gateway'>", ip4addr_ntoa(&ip));
+	      printed =  sprintf(pcInsert, "%s", ip4addr_ntoa(&ip));
 	      break;
 	    case 4: /* "use dhcp" */
-	      printed =  sprintf(pcInsert, "<input type='checkbox' name='usedhcp' %s>", (useDHCP == 0) ? "" : "checked" );
+	      printed =  sprintf(pcInsert, "%s", (useDHCP == 0) ? "" : "checked" );
 	      break;
 	    case 5: /* "ledb" */
-	      printed = sprintf(pcInsert, "<input type='number' min=0 max=255 value='%d' name='ledb'>", ledbrightness);
+	      printed = sprintf(pcInsert, "%d", ledbrightness);
+	    break;
+	    case 6: /* "mac" */
+	      printed = sprintf(pcInsert, "%02X:%02X:%02X:%02x:%02x:%02x", netif_default->hwaddr[0], netif_default->hwaddr[1], netif_default->hwaddr[2], netif_default->hwaddr[3], netif_default->hwaddr[4], netif_default->hwaddr[5]);
+	    break;
+	    case 7: /* "cib" */
+	      printed = sprintf(pcInsert, "%s", ip4addr_ntoa(netif_ip4_addr(netif_default)));
+	    break;
+	    case 8: /* "sgtin" */
+	      printed = sprintf(pcInsert, "%s", _sgtin);
+	    break;
+	    case 9: /* "rfw" */
+	      printed = sprintf(pcInsert, "%d.%d.%d",  *_rfw, *(_rfw + 1), *(_rfw + 2));
 	    break;
 	    default:
 	      printed = 0;
@@ -88,6 +100,9 @@ const char * SETTINGS_CGI_Handler(int iIndex, int iNumParams, char *pcParam[], c
 	  ip4_addr ip;
 	  ip4_addr nm;
 	  ip4_addr gw;
+	  ip.addr = 0;
+	  nm.addr = 0;
+	  gw.addr = 0;
 	  uint8_t useDHCP=0;
 	  uint8_t ledBrightness=255;
 	  char * hostname = {0};
@@ -114,7 +129,9 @@ WebUI::WebUI(Settings *settings) {
     _settings = settings;
 }
 
-void WebUI::start(){
+void WebUI::start(const char * sgtin, const uint8_t * rfw){
+	_rfw= rfw;
+	_sgtin = sgtin;
   httpd_init();
   http_set_ssi_handler(SETTINGS_SSI_Handler, ssi_tags, LWIP_ARRAYSIZE(ssi_tags));
   CGI_TAB[0] = SETTINGS_CGI;
