@@ -59,7 +59,7 @@ private:
     char _serial[11] = {0};
     uint32_t _bidCosRadioMAC = 0;
     uint32_t _hmIPRadioMAC = 0;
-    char _sgtin[25] = {0};
+    char _sgtin[30] = {0};
     uint8_t _firmwareVersion[3] = {0};
     radio_module_type_t _radioModuleType = RADIO_MODULE_NONE;
 
