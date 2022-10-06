@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<style>
+td,th {border: 1px solid black; padding: 5px;}
+table {border-collapse: collapse;}
+</style>
+</head>
+<body onload="script()" style="font-family:'Verdana'">
+<title>HB-RF-HAP WebUI</title>
+<i>HB-RF-HAP Information</i><br>
+<table>
+<tr><td>ETH MAC:</td><td><!--#mac--></td></tr>
+<tr><td>ETH IP:</td><td><!--#cip--></td></tr>
+<tr><td>SGTIN:</td><td><!--#sgtin--></td></tr>
+<tr><td>Radio FW:</td><td><!--#rfw--></td></tr>
+</table><br/>
+<i>HB-RF-HAP Network Configuration</i><br>
+<form method="get" action="/settings.cgi">
+<table>
+<tr><td>Hostname:</td><td><input value="<!--#hname-->" name='hname'></td></tr>
+<tr><td>IP Address:</td><td><input value="<!--#ipaddr-->" id="ipaddr" name="ipaddr"></td></tr>
+<tr><td>Subnet Mask:</td><td><input value="<!--#snetmsk-->" id="snetmsk" name="snetmsk"></td></tr>
+<tr><td>Gateway:</td><td><input value="<!--#gateway-->" id="gateway" name="gateway"></td></tr>
+<tr><td>DHCP:</td><td><input type="checkbox" id="usedhcp" name="usedhcp" <!--#usedhcp-->></td></tr>
+<tr><td>LED Brightness:</td><td>
+<div class="slidecontainer"><input type="range" min="0" max="255" value="<!--#ledb-->" name="ledb" class="slider" id="ledb"></div>
+</td></tr>
+<tr><td colspan="2" style="text-align:center"><input type="submit" value="Accept"></td></tr>
+</table></form>
+<script>
+var checkbox = document.getElementById("usedhcp");
+function active() {
+  if(checkbox.checked) {
+     document.getElementById("ipaddr").disabled=true;
+     document.getElementById("snetmsk").disabled=true;
+     document.getElementById("gateway").disabled=true;
+     }
+  else {
+     document.getElementById("ipaddr").disabled=false;
+     document.getElementById("snetmsk").disabled=false;
+     document.getElementById("gateway").disabled=false;
+     }
+}
+
+checkbox.addEventListener("change", (event) => { active();})
+
+function script() {active();}
+
+</script>
+</body></html>
