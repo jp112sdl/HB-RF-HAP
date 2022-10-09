@@ -125,11 +125,11 @@ void RadioModuleConnector::_serialQueueHandler()
 
     for (;;)
     {
-    	taskENTER_CRITICAL();
     	while (__HAL_UART_GET_FLAG(&huart5, UART_FLAG_RXNE) == SET) {
+        	taskENTER_CRITICAL();
     	    HAL_UART_Receive(&huart5, (uint8_t *)rcvbyte, 1, 0);
     	    if (rcvbyte[0] == 0xFD) {
-    	    	HAL_UARTEx_ReceiveToIdle(&huart5, (uint8_t *)rcvbyte, 255, &rxlen, 5);
+    	    	HAL_UARTEx_ReceiveToIdle(&huart5, (uint8_t *)rcvbyte, 255, &rxlen, 10);
 	    		UART_RcvBuffer[0] = 0xFD;
 
     	    	for (uint16_t i = 0; i < rxlen; i++) {
@@ -144,9 +144,8 @@ void RadioModuleConnector::_serialQueueHandler()
     	    	_streamParser->append(UART_RcvBuffer, len);
     	    	len = 1;
     	    }
+      		taskEXIT_CRITICAL();
     	}
-
-  		taskEXIT_CRITICAL();
   		_streamParser->flush();
     }
     vTaskDelete(NULL);
