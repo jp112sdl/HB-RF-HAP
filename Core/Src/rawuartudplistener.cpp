@@ -293,8 +293,6 @@ void RawUartUdpListener::start()
 {
     _udp_queue = xQueueCreate(32, sizeof(udp_event_t *));
 
-    //xTaskCreate(_raw_uart_udpQueueHandlerTask, "UDPQueueHandler", 4096, this, 15, &_udpQueueHandlerTaskHandle);
-
     _udpQueueHandlerTaskHandle = osThreadNew(_raw_uart_udpQueueHandlerTask, ( void * ) 1, &udpQueueHandlerTask_attributes);
 
     _pcb = udp_new();
