@@ -101,6 +101,7 @@ void RawUartUdpListener::handlePacket(pbuf *pb, ip4_addr_t addr, uint16_t port)
     case 0: // connect
         if (length == 5 && data[2] == 1)
         { // protocol version 1
+        	printf("connected with protocol version 1\n");
             atomic_fetch_add(&_endpointConnectionIdentifier, 2);
             atomic_store(&_remotePort, (ushort)0);
             atomic_store(&_connectionStarted, false);
@@ -125,6 +126,7 @@ void RawUartUdpListener::handlePacket(pbuf *pb, ip4_addr_t addr, uint16_t port)
                 printf("Received raw-uart reconnect packet with invalid endpoint identifier %d, should be %d\n", data[3], endpointConnectionIdentifier);
                 return;
             }
+        	printf("connected with protocol version 2\n");
 
             atomic_store(&_remotePort, (ushort)0);
             atomic_store(&_remoteAddress, addr.addr);
