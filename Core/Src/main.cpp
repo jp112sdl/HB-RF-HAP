@@ -29,7 +29,6 @@
 #include "led.h"
 #include "mdnsresponder.h"
 #include "linereader.h"
-#include "streamparser.h"
 #include "radiomoduleconnector.h"
 #include "radiomoduledetector.h"
 #include "rawuartudplistener.h"
@@ -125,7 +124,6 @@ void startMainTask(void *argument) {
   printf("Starting WebUI\n");
   webui.start(radioModuleDetector.getSGTIN(), radioModuleDetector.getFirmwareVersion());
 
-  static char * last_ipaddr= {0};
   if (settings.getUseDHCP() == false) {
 	  printf("Static IP: %s\n",ip4addr_ntoa(netif_ip4_addr(&gnetif)));
   }
@@ -133,37 +131,45 @@ void startMainTask(void *argument) {
   greenLED.setState(LED_STATE_BLINK);
   printf("Initialization done.\n");
   int lastLEDBrightness = -1;
+  uint32_t regvalue;
+
+  /* for debugging only */
+  //char *current_ipaddr = static_cast<char *>(malloc(sizeof(ip4_addr_t)));
+  //static char * last_ipaddr= {0};
+
   for(;;)  {
 	if (lastLEDBrightness != settings.getLEDBrightness()) {
 		lastLEDBrightness = settings.getLEDBrightness();
 		LED::start(&settings, &htim3);
 	}
     vTaskDelay(1000 / portTICK_PERIOD_MS);
-  	uint32_t regvalue;
-     	if (HAL_ETH_ReadPHYRegister(&heth, PHY_BSR, &regvalue) == HAL_OK) {
-    	  if((regvalue & PHY_LINKED_STATUS)== (uint16_t)RESET) {
-    	     if (netif_is_link_up(&gnetif)) {
-    	  	   if (settings.getUseDHCP() == true ) { dhcp_stop(&gnetif); }
-    	       netif_set_down(&gnetif);
-    	       netif_set_link_down(&gnetif);
-     	     }
-    	  } else {
-    	    if (!netif_is_link_up(&gnetif)) {
-    	    if	(settings.getUseDHCP() == true && dhcp_supplied_address(&gnetif) == 0) last_ipaddr = {0};
-  	          netif_set_link_up(&gnetif);
-  	          netif_set_up(&gnetif);
-  	          if (settings.getUseDHCP() == true ) { dhcp_start(&gnetif); }
-    	    }
-    	  }
-    	}
-     	if (settings.getUseDHCP() == true && dhcp_supplied_address(&gnetif)) {
-        	  char * current_ipaddr = ip4addr_ntoa(netif_ip4_addr(&gnetif));
-           	  if (current_ipaddr != last_ipaddr) {
-           		printf("DHCP IP: %s\n", current_ipaddr);
-           		last_ipaddr = current_ipaddr;
-     	      }
-     	}
+
+    if (HAL_ETH_ReadPHYRegister(&heth, PHY_BSR, &regvalue) == HAL_OK) {
+      if((regvalue & PHY_LINKED_STATUS)== (uint16_t)RESET) {
+         if (netif_is_link_up(&gnetif)) {
+      	   if (settings.getUseDHCP() == true ) { dhcp_stop(&gnetif); }
+           netif_set_down(&gnetif);
+           netif_set_link_down(&gnetif);
+          }
+      } else {
+        if (!netif_is_link_up(&gnetif)) {
+          //if (settings.getUseDHCP() == true && dhcp_supplied_address(&gnetif) == 0) last_ipaddr = {0};
+  	      netif_set_link_up(&gnetif);
+  	      netif_set_up(&gnetif);
+  	      if (settings.getUseDHCP() == true ) { dhcp_start(&gnetif); }
+        }
+      }
     }
+
+    /* for debugging only */
+    //if ((last_ipaddr != current_ipaddr) && (settings.getUseDHCP() == true) && (dhcp_supplied_address(&gnetif)>0)) {
+    //    current_ipaddr = ip4addr_ntoa(netif_ip4_addr(&gnetif));
+    //    if (current_ipaddr != last_ipaddr) {
+    //      printf("DHCP IP: %s\n", current_ipaddr);
+    //      last_ipaddr = current_ipaddr;
+    //    }
+    //}
+  }
   vTaskSuspend(NULL);
 }
 
