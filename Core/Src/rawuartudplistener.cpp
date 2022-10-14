@@ -200,9 +200,7 @@ void RawUartUdpListener::handlePacket(pbuf *pb, ip4_addr_t addr, uint16_t port)
             return;
         }
 
-        printf("RX[%02x]:",length); for ( uint8_t i = 2; i < length - 2; i++) { printf(" %02x",data[i]); } printf("\n");
-        //printf("R[%d]\n",length);
-
+        //printf("RX[%02x]:",length); for ( uint8_t i = 2; i < length - 2; i++) { printf(" %02x",data[i]); } printf("\n");
         _radioModuleConnector->sendFrame(&data[2], length - 4);
         break;
 
@@ -263,8 +261,6 @@ void RawUartUdpListener::handleFrame(unsigned char *buffer, uint16_t len)
         return;
     }
 
-    //printf("T[%d]\n",len);
-
     //patch SGTIN to represent device type 16 (271) (HmIP-RFUSB) and not 15 (270) (HmIP-HAP)
     if (len == 0x15) {
     	if (buffer[5] == 0x05 && buffer[6] == 0x01) {
@@ -282,10 +278,7 @@ void RawUartUdpListener::handleFrame(unsigned char *buffer, uint16_t len)
     		}
     	}
     }
-
-    printf("TX[%02x]:",len); for ( uint8_t i = 0; i < len; i++) { printf(" %02x",buffer[i]); } printf("\n");
-
-
+    //printf("TX[%02x]:",len); for ( uint8_t i = 0; i < len; i++) { printf(" %02x",buffer[i]); } printf("\n");
     sendMessage(7, buffer, len);
 }
 
