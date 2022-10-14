@@ -118,35 +118,19 @@ void RadioModuleConnector::sendFrame(unsigned char *buffer, uint16_t len)
 
 void RadioModuleConnector::_serialQueueHandler()
 {
-	volatile uint8_t rcvbyte[255] = {0};
-	volatile uint16_t len = 1;
-    unsigned char UART_RcvBuffer[255]={0};
+    static uint8_t * rcvbuffer = static_cast<uint8_t *>(malloc(UART_RCV_BUFFER_SIZE));
 	uint16_t rxlen;
 
     for (;;)
     {
+  		if (__HAL_UART_GET_FLAG(&huart5, UART_FLAG_ORE) == SET) { _streamParser->flush(); __HAL_UART_CLEAR_OREFLAG(&huart5);}
     	while (__HAL_UART_GET_FLAG(&huart5, UART_FLAG_RXNE) == SET) {
         	taskENTER_CRITICAL();
-    	    HAL_UART_Receive(&huart5, (uint8_t *)rcvbyte, 1, 0);
-    	    if (rcvbyte[0] == 0xFD) {
-    	    	HAL_UARTEx_ReceiveToIdle(&huart5, (uint8_t *)rcvbyte, 255, &rxlen, 10);
-	    		UART_RcvBuffer[0] = 0xFD;
-
-    	    	for (uint16_t i = 0; i < rxlen; i++) {
-    	    		UART_RcvBuffer[len] = rcvbyte[i];
-    	    		if (rcvbyte[i] == 0xFD) {
-    	    			_streamParser->append(UART_RcvBuffer, len+1);
-    	    			len = 0;
-      	    			UART_RcvBuffer[0] = 0xFD;
-    	    		}
-    	    		len = len + 1;
-    	    	}
-    	    	_streamParser->append(UART_RcvBuffer, len);
-    	    	len = 1;
-    	    }
+   	    	HAL_UARTEx_ReceiveToIdle(&huart5, rcvbuffer, UART_RCV_BUFFER_SIZE, &rxlen, 5);
+  	    	_streamParser->append(rcvbuffer, rxlen);
       		taskEXIT_CRITICAL();
     	}
-  		_streamParser->flush();
+    	if (rxlen == UART_RCV_BUFFER_SIZE) {printf("UART_RCV_BUFFER FULL\n");}
     }
     vTaskDelete(NULL);
 }

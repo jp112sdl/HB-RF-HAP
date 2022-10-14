@@ -32,6 +32,7 @@
 #define EFM32_RESET_PORT GPIOB
 #define EFM32_RESET_PIN  GPIO_PIN_6
 
+#define UART_RCV_BUFFER_SIZE 0x200
 
 class FrameHandler
 {
