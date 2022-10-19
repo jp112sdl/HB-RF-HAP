@@ -188,6 +188,8 @@ int main(void) {
 
   MX_TIM3_Init();
 
+  __HAL_TIM_SET_COMPARE(&htim3, HM_RED_CHN, 0xFFFF);
+
   osKernelInitialize();
   mainTaskHandle = osThreadNew(startMainTask, NULL, &mainTask_attributes );
   osKernelStart();
