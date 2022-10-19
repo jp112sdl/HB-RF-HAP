@@ -23,6 +23,7 @@ static Settings *_settings;
 
 const uint8_t * _rfw;
 const char * _sgtin;
+char  _sgtine[30] = {0};
 
 tSSIHandler SETTINGS_Page_SSI_Handler;
 
@@ -35,7 +36,8 @@ const char * ssi_tags[] = {
   "ledb",
   "mac",
   "cip",
-  "sgtin",
+  "sgtine",
+  "sgtinr",
   "rfw"
 };
 
@@ -82,10 +84,18 @@ u16_t SETTINGS_SSI_Handler(int iIndex, char *pcInsert, int iInsertLen) {
 	    case 7: /* "cib" */
 	      printed = sprintf(pcInsert, "%s", ip4addr_ntoa(netif_ip4_addr(netif_default)));
 	    break;
-	    case 8: /* "sgtin" */
+	    case 8: /* "sgtine" */
+	      memcpy(_sgtine, _sgtin, 30);
+	      _sgtine[15] = '0';
+	      _sgtine[16] = '4';
+	      _sgtine[17] = '1';
+	      _sgtine[18] = 'D';
+  		  printed = sprintf(pcInsert, "%s", _sgtine);
+	    break;
+	    case 9: /* "sgtinr" */
 	      printed = sprintf(pcInsert, "%s", _sgtin);
 	    break;
-	    case 9: /* "rfw" */
+	    case 10: /* "rfw" */
 	      printed = sprintf(pcInsert, "%d.%d.%d",  *_rfw, *(_rfw + 1), *(_rfw + 2));
 	    break;
 	    default:

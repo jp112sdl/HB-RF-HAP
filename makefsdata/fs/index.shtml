@@ -13,7 +13,8 @@ table {border-collapse: collapse;}
 <table>
 <tr><td>ETH MAC:</td><td><!--#mac--></td></tr>
 <tr><td>ETH IP:</td><td><!--#cip--></td></tr>
-<tr><td>SGTIN:</td><td><!--#sgtin--></td></tr>
+<tr><td>SGTIN (emul.):</td><td><!--#sgtine--></td></tr>
+<tr><td>SGTIN (real):</td><td><!--#sgtinr--></td></tr>
 <tr><td>Radio FW:</td><td><!--#rfw--></td></tr>
 </table><br/>
 <i>HB-RF-HAP Network Configuration</i><br>
